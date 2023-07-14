@@ -89,17 +89,19 @@
     <tr>
       {#each row as cell, cellIndex}
         <td>
-          <div
-            class="jewel"
-            style:--jewel={cell}
-            draggable="true"
-            on:dragstart={onJewelDragStart}
-            on:dragover={onJewelDragOver}
-            on:drop={onJewelDrop}
-            role="region"
-            data-row={rowIndex}
-            data-cell={cellIndex}
-          />
+          {#if typeof cell == "number"}
+            <div
+              class="jewel"
+              style:--jewel={cell}
+              draggable="true"
+              on:dragstart={onJewelDragStart}
+              on:dragover={onJewelDragOver}
+              on:drop={onJewelDrop}
+              role="region"
+              data-row={rowIndex}
+              data-cell={cellIndex}
+            />
+          {/if}
         </td>
       {/each}
     </tr>
