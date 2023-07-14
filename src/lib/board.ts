@@ -57,3 +57,21 @@ export function checkForMatches(board: Board) {
 
   return board;
 }
+
+export function collapseBoard(board: Board) {
+  // Collapse the board, moving jewels down
+
+  for (let j = 0; j < board.length; j++) {
+    let shift = 0;
+    for (let i = board.length - 1; i >= 0; i--) {
+      if (board[i][j] === emptyCell) {
+        shift++;
+      } else if (shift) {
+        board[i + shift][j] = board[i][j];
+        board[i][j] = emptyCell;
+      }
+    }
+  }
+
+  return board;
+}
