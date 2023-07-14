@@ -107,6 +107,11 @@
     cursor: grab;
   }
 
+  .jewel:focus-visible,
+  .jewel:hover {
+    transform: scale(1.1);
+  }
+
   .jewel:active {
     cursor: grabbing;
   }
