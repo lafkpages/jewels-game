@@ -1,3 +1,3 @@
 export type BoardCell = number;
 
-export type Board = BoardCell[][];
+export type Board<T = BoardCell> = T[][];
