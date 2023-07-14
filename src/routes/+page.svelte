@@ -55,6 +55,20 @@
 
     const [rowTo, cellTo] = getJewelPos(e.target);
 
+    // Only allow moving to adjacent cells
+    if (
+      Math.abs(rowFrom - rowTo) > 1 ||
+      Math.abs(cellFrom - cellTo) > 1 ||
+      (rowFrom === rowTo && cellFrom === cellTo)
+    ) {
+      return;
+    }
+
+    // Don't allow moving diagonally
+    if (rowFrom !== rowTo && cellFrom !== cellTo) {
+      return;
+    }
+
     // Swap jewels
     const jewelFrom = board[rowFrom][cellFrom];
     board[rowFrom][cellFrom] = board[rowTo][cellTo];
