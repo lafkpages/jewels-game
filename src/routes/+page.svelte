@@ -1,4 +1,8 @@
 <script lang="ts">
+  import { quintOut } from "svelte/easing";
+  import { crossfade } from "svelte/transition";
+  import { flip } from "svelte/animate";
+
   import type { Board } from "$lib";
 
   let board: Board = [
@@ -8,6 +12,24 @@
   ];
 
   let boardElm: HTMLTableElement;
+
+  const [send, receive] = crossfade({
+    duration: (d) => Math.sqrt(d * 200),
+
+    fallback(node, params) {
+      const style = getComputedStyle(node);
+      const transform = style.transform === "none" ? "" : style.transform;
+
+      return {
+        duration: 600,
+        easing: quintOut,
+        css: (t) => `
+					transform: ${transform} scale(${t});
+					opacity: ${t}
+				`,
+      };
+    },
+  });
 
   function getJewelPos(jewel: HTMLElement) {
     return [
@@ -71,8 +93,13 @@
 <table bind:this={boardElm}>
   {#each board as row, rowIndex}
     <tr>
-      {#each row as cell, cellIndex}
-        <td>
+      {#each row as cell, cellIndex (`${rowIndex}-${cellIndex}`)}
+        {@const cellId = `${rowIndex}-${cellIndex}`}
+        <td
+          in:receive={{ key: cellId }}
+          out:send={{ key: cellId }}
+          animate:flip
+        >
           <div
             class="jewel"
             style:--jewel={cell}
