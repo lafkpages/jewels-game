@@ -23,10 +23,6 @@
 </table>
 
 <style>
-  tr {
-    height: 16px;
-  }
-
   .jewel {
     background: url("/jewels.png") -192px calc(var(--jewel) * -16px);
     image-rendering: pixelated;
