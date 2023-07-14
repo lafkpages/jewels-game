@@ -35,5 +35,6 @@
     image-rendering: pixelated;
     width: var(--size);
     height: var(--size);
+    cursor: grab;
   }
 </style>
