@@ -37,4 +37,8 @@
     height: var(--size);
     cursor: grab;
   }
+
+  .jewel:active {
+    cursor: grabbing;
+  }
 </style>
