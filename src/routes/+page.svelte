@@ -80,8 +80,7 @@
             on:dragstart={onJewelDragStart}
             on:dragover={onJewelDragOver}
             on:drop={onJewelDrop}
-            role="cell"
-            tabindex="0"
+            role="region"
             data-row={rowIndex}
             data-cell={cellIndex}
           />
