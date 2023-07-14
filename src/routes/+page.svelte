@@ -29,7 +29,7 @@
     --jewel: 0;
 
     background: url("/jewels.png");
-    background-position: calc(var(--scale) * -192px)
+    background-position: calc(var(--scale) * -192)
       calc(var(--jewel) * (var(--size) * -1));
     background-size: calc(var(--scale) * 256);
     image-rendering: pixelated;
