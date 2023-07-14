@@ -6,8 +6,6 @@
     refillBoard,
   } from "$lib";
 
-  import type { Board } from "$lib";
-
   const boardSize = 10;
   let board = generateBoard(boardSize);
 
