@@ -105,6 +105,7 @@
     height: var(--size);
     cursor: grab;
     transition: ease-in-out 0.2s;
+    transition-property: transform;
   }
 
   .jewel:focus-visible,
