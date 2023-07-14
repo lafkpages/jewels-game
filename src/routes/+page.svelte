@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { generateBoard } from "$lib";
+  import { generateBoard, checkForMatches } from "$lib";
 
   import type { Board } from "$lib";
 
@@ -73,6 +73,9 @@
     const jewelFrom = board[rowFrom][cellFrom];
     board[rowFrom][cellFrom] = board[rowTo][cellTo];
     board[rowTo][cellTo] = jewelFrom;
+
+    // Find matches
+    console.log(checkForMatches(board));
 
     // Reactivity
     board = board;
