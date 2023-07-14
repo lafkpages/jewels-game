@@ -1,4 +1,4 @@
-import type { Board } from "$lib";
+import type { Board, Match } from "$lib";
 
 export const jewelTypes = 11;
 
@@ -21,7 +21,7 @@ export function checkForMatches(board: Board) {
 
   // Keep track of the matches found,
   // so we can give the player points for them
-  const matches = [];
+  const matches: Match[] = [];
 
   // Horizontal matches
   for (let i = 0; i < board.length; i++) {
