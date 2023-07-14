@@ -83,7 +83,7 @@
       let matches;
       ({ board, matches } = checkForMatches(board));
 
-      score += sum(matches);
+      score += sum(matches.map((m) => m.length));
 
       setTimeout(() => {
         board = collapseBoard(board);

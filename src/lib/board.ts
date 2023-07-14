@@ -31,14 +31,27 @@ export function checkForMatches(board: Board) {
         matchLength++;
       } else {
         if (matchLength >= 3) {
+          let jewelType = board[i][j];
+
+          if (jewelType === emptyCell) {
+            // If the match includes an empty cell,
+            // then it's not a match
+            matchLength = 1;
+            continue;
+          }
+
           // Match found, mark it
           for (let k = 0; k < matchLength; k++) {
             board[i][j - k] = emptyCell;
           }
 
           // Keep track of the matches found
-          matches.push(matchLength);
+          matches.push({
+            length: matchLength,
+            jewelType
+          });
         }
+
         matchLength = 1;
       }
     }
@@ -52,14 +65,27 @@ export function checkForMatches(board: Board) {
         matchLength++;
       } else {
         if (matchLength >= 3) {
+          let jewelType = board[i][j];
+
+          if (jewelType === emptyCell) {
+            // If the match includes an empty cell,
+            // then it's not a match
+            matchLength = 1;
+            continue;
+          }
+
           // Match found, mark it
           for (let k = 0; k < matchLength; k++) {
             board[i - k][j] = emptyCell;
           }
 
           // Keep track of the matches found
-          matches.push(matchLength);
+          matches.push({
+            length: matchLength,
+            jewelType
+          });
         }
+
         matchLength = 1;
       }
     }

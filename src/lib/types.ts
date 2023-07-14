@@ -4,4 +4,7 @@ export type BoardCell = number | typeof emptyCell;
 
 export type Board<T = BoardCell> = T[][];
 
-export type Match = number;
+export interface Match {
+  length: number;
+  jewelType: number;
+};
