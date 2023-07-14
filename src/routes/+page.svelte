@@ -76,7 +76,17 @@
     board[rowTo][cellTo] = jewelFrom;
 
     // Find matches, move down jewels, plus reactivity
-    board = refillBoard(collapseBoard(checkForMatches(board)));
+    setTimeout(() => {
+      board = checkForMatches(board);
+
+      setTimeout(() => {
+        board = collapseBoard(board);
+
+        setTimeout(() => {
+          board = refillBoard(board);
+        }, 200);
+      }, 200);
+    }, 200);
   }
 </script>
 
