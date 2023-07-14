@@ -1,11 +1,10 @@
 <script lang="ts">
+  import { generateBoard } from "$lib";
+
   import type { Board } from "$lib";
 
-  let board: Board = [
-    [0, 1, 2],
-    [3, 4, 5],
-    [6, 7, 8],
-  ];
+  const boardSize = 10;
+  let board = generateBoard(boardSize);
 
   let boardElm: HTMLTableElement;
 
