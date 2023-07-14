@@ -1,2 +1,5 @@
 # Ignore lockfiles
 pnpm-lock.yaml
+
+# SvelteKit
+.svelte-kit
