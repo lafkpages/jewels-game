@@ -14,8 +14,22 @@
   {#each board as row}
     <tr>
       {#each row as cell}
-        <td>{cell}</td>
+        <td>
+          <div class="jewel" style:--jewel={3} />
+        </td>
       {/each}
     </tr>
   {/each}
 </table>
+
+<style>
+  tr {
+    height: 16px;
+  }
+
+  .jewel {
+    background: url("/jewels.png") -192px calc(var(--jewel) * -16px);
+    width: 16px;
+    height: 16px;
+  }
+</style>
