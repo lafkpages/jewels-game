@@ -7,6 +7,13 @@
     [7, 8, 9],
   ];
 
+  function getJewelPos(jewel: HTMLElement) {
+    return [
+      parseInt(jewel.dataset.row ?? "0"),
+      parseInt(jewel.dataset.cell ?? "0"),
+    ];
+  }
+
   function onJewelDragStart(e: DragEvent) {
     if (!e.dataTransfer) {
       return;
@@ -16,17 +23,12 @@
       return;
     }
 
-    const row = e.target.dataset.row;
-    const cell = e.target.dataset.cell;
-
-    if (row === undefined || cell === undefined) {
-      return;
-    }
+    const [row, cell] = getJewelPos(e.target);
 
     // Drag and drop data
     e.dataTransfer.effectAllowed = "move";
-    e.dataTransfer.setData("text/plain;p=row", row);
-    e.dataTransfer.setData("text/plain;p=cell", cell);
+    e.dataTransfer.setData("text/plain;p=row", row.toString());
+    e.dataTransfer.setData("text/plain;p=cell", cell.toString());
   }
 
   function onJewelDragOver(e: DragEvent) {
@@ -43,14 +45,20 @@
       return;
     }
 
-    const row = parseInt(e.dataTransfer.getData("text/plain;p=row"));
-    const cell = parseInt(e.dataTransfer.getData("text/plain;p=cell"));
-
-    if (isNaN(row) || isNaN(cell)) {
+    if (!(e.target instanceof HTMLElement)) {
       return;
     }
 
-    console.log(row, cell, e.target);
+    const rowFrom = parseInt(e.dataTransfer.getData("text/plain;p=row"));
+    const cellFrom = parseInt(e.dataTransfer.getData("text/plain;p=cell"));
+
+    if (isNaN(rowFrom) || isNaN(cellFrom)) {
+      return;
+    }
+
+    const [rowTo, cellTo] = getJewelPos(e.target);
+
+    console.log(rowFrom, cellFrom, rowTo, cellTo);
   }
 </script>
 
