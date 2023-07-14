@@ -136,7 +136,8 @@
 
 <style>
   table,
-  tr {
+  tr,
+  td {
     border-spacing: 0px;
   }
 
