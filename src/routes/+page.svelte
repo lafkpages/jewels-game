@@ -83,7 +83,7 @@
       let matches;
       ({ board, matches } = checkForMatches(board));
 
-      score += sum(matches.map((m) => m.length));
+      score += sum(matches.map((m) => m.length * (m.jewelType + 1)));
 
       setTimeout(() => {
         board = collapseBoard(board);
