@@ -135,6 +135,11 @@
 </table>
 
 <style>
+  table,
+  tr {
+    border-spacing: 0px;
+  }
+
   .jewel {
     --size: 32px;
     --scale: calc(var(--size) / 16);
