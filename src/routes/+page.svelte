@@ -1,6 +1,6 @@
 <script lang="ts">
   import {
-    generateBoard,
+    generateBoardEnsureNoMatches,
     checkForMatches,
     collapseBoard,
     refillBoard,
@@ -8,7 +8,7 @@
   } from "$lib";
 
   const boardSize = 10;
-  let board = generateBoard(boardSize);
+  let board = generateBoardEnsureNoMatches(boardSize);
 
   let score = 0;
 
