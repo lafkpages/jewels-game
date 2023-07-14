@@ -1,5 +1,10 @@
 <script lang="ts">
-  import { generateBoard, checkForMatches, collapseBoard } from "$lib";
+  import {
+    generateBoard,
+    checkForMatches,
+    collapseBoard,
+    refillBoard,
+  } from "$lib";
 
   import type { Board } from "$lib";
 
@@ -75,7 +80,7 @@
     board[rowTo][cellTo] = jewelFrom;
 
     // Find matches, move down jewels, plus reactivity
-    board = collapseBoard(checkForMatches(board));
+    board = refillBoard(collapseBoard(checkForMatches(board)));
   }
 </script>
 
