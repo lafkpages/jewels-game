@@ -15,6 +15,16 @@ export function generateBoard(size: number): Board {
   return board;
 }
 
+export function generateBoardEnsureNoMatches(...args: Parameters<typeof generateBoard>) {
+  let board = generateBoard(...args);
+  let matches = checkForMatches(board).matches;
+  while (matches.length) {
+    board = generateBoard(...args);
+    matches = checkForMatches(board).matches;
+  }
+  return board;
+}
+
 export function checkForMatches(board: Board) {
   // Look for matches, horizontally and vertically
   // Matches must be of at least three equal jewels
