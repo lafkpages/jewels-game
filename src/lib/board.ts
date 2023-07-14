@@ -75,3 +75,15 @@ export function collapseBoard(board: Board) {
 
   return board;
 }
+
+export function refillBoard(board: Board) {
+  // Refill the board, adding new jewels to the top
+
+  for (let j = 0; j < board.length; j++) {
+    for (let i = 0; i < board.length && board[i][j] === emptyCell; i++) {
+      board[i][j] = Math.floor(Math.random() * jewelTypes);
+    }
+  }
+
+  return board;
+}
