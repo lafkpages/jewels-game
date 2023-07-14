@@ -9,8 +9,6 @@
   const boardSize = 10;
   let board = generateBoard(boardSize);
 
-  let boardElm: HTMLTableElement;
-
   function getJewelPos(jewel: HTMLElement) {
     return [
       parseInt(jewel.dataset.row ?? "0"),
@@ -84,7 +82,7 @@
 
 <h1>Jewels Game</h1>
 
-<table bind:this={boardElm}>
+<table>
   {#each board as row, rowIndex}
     <tr>
       {#each row as cell, cellIndex}
