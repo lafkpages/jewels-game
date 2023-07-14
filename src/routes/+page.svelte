@@ -79,9 +79,17 @@
     board[rowTo][cellTo] = jewelFrom;
 
     // Find matches, move down jewels, plus reactivity
+    doStuff();
+  }
+
+  function doStuff() {
     setTimeout(() => {
       let matches;
       ({ board, matches } = checkForMatches(board));
+
+      if (!matches.length) {
+        return;
+      }
 
       score += sum(matches.map((m) => m.length * (m.jewelType + 1)));
 
@@ -90,6 +98,8 @@
 
         setTimeout(() => {
           board = refillBoard(board);
+
+          doStuff();
         }, 200);
       }, 200);
     }, 200);
