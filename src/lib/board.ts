@@ -2,6 +2,8 @@ import type { Board } from "$lib";
 
 export const jewelTypes = 11;
 
+export const emptyCell = -1;
+
 export function generateBoard(size: number): Board {
   const board: Board = [];
   for (let i = 0; i < size; i++) {
@@ -27,7 +29,7 @@ export function checkForMatches(board: Board) {
         if (matchLength >= 3) {
           // Match found, mark it
           for (let k = 0; k < matchLength; k++) {
-            board[i][j - k] = -1;
+            board[i][j - k] = emptyCell;
           }
         }
         matchLength = 1;
@@ -45,7 +47,7 @@ export function checkForMatches(board: Board) {
         if (matchLength >= 3) {
           // Match found, mark it
           for (let k = 0; k < matchLength; k++) {
-            board[i - k][j] = -1;
+            board[i - k][j] = emptyCell;
           }
         }
         matchLength = 1;
