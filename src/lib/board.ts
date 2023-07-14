@@ -2,7 +2,7 @@ import type { Board } from "$lib";
 
 export const jewelTypes = 11;
 
-export const emptyCell = -1;
+export const emptyCell = null;
 
 export function generateBoard(size: number): Board {
   const board: Board = [];
