@@ -25,8 +25,13 @@
 <style>
   .jewel {
     --size: 32px;
+    --scale: calc(var(--size) / 16);
+    --jewel: 0;
 
-    background: url("/jewels.png") -192px calc(var(--jewel) * -16px);
+    background: url("/jewels.png");
+    background-position: calc(var(--scale) * -192px)
+      calc(var(--jewel) * (var(--size) * -1));
+    background-size: calc(var(--scale) * 256);
     image-rendering: pixelated;
     width: var(--size);
     height: var(--size);
