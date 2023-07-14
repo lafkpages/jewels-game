@@ -1,5 +1,7 @@
 <script lang="ts">
-  const board = [
+  import type { Board } from "$lib";
+
+  const board: Board = [
     [1, 2, 3],
     [4, 5, 6],
     [7, 8, 9],
