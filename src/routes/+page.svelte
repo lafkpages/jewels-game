@@ -77,7 +77,8 @@
 
     // Find matches, move down jewels, plus reactivity
     setTimeout(() => {
-      board = checkForMatches(board);
+      let matches;
+      ({ board, matches } = checkForMatches(board));
 
       setTimeout(() => {
         board = collapseBoard(board);

@@ -19,6 +19,10 @@ export function checkForMatches(board: Board) {
   // Look for matches, horizontally and vertically
   // Matches must be of at least three equal jewels
 
+  // Keep track of the matches found,
+  // so we can give the player points for them
+  const matches = [];
+
   // Horizontal matches
   for (let i = 0; i < board.length; i++) {
     let matchLength = 1;
@@ -31,6 +35,9 @@ export function checkForMatches(board: Board) {
           for (let k = 0; k < matchLength; k++) {
             board[i][j - k] = emptyCell;
           }
+
+          // Keep track of the matches found
+          matches.push(matchLength);
         }
         matchLength = 1;
       }
@@ -49,13 +56,18 @@ export function checkForMatches(board: Board) {
           for (let k = 0; k < matchLength; k++) {
             board[i - k][j] = emptyCell;
           }
+
+          // Keep track of the matches found
+          matches.push(matchLength);
         }
         matchLength = 1;
       }
     }
   }
 
-  return board;
+  return {
+    matches, board
+  };
 }
 
 export function collapseBoard(board: Board) {
