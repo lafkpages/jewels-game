@@ -24,9 +24,11 @@
 
 <style>
   .jewel {
+    --size: 32px;
+
     background: url("/jewels.png") -192px calc(var(--jewel) * -16px);
     image-rendering: pixelated;
-    width: 16px;
-    height: 16px;
+    width: var(--size);
+    height: var(--size);
   }
 </style>
