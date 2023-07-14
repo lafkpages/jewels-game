@@ -5,8 +5,9 @@
     collapseBoard,
     refillBoard,
     sum,
-    jewelTypes,
   } from "$lib";
+
+  import JewelScoreBoard from "$lib/JewelScoreBoard.svelte";
 
   const boardSize = 10;
   let board = generateBoardEnsureNoMatches(boardSize);
@@ -137,24 +138,7 @@
 
 <h2>Scores per jewel</h2>
 
-<table>
-  <thead>
-    <tr>
-      <th>Jewel</th>
-      <th>Score</th>
-    </tr>
-  </thead>
-  <tbody>
-    {#each { length: jewelTypes } as _, jewelType}
-      <tr>
-        <td>
-          <div class="jewel" style:--jewel={jewelType} />
-        </td>
-        <td>{jewelType + 1}</td>
-      </tr>
-    {/each}
-  </tbody>
-</table>
+<JewelScoreBoard />
 
 <style>
   table,
