@@ -15,7 +15,7 @@
     <tr>
       {#each row as cell}
         <td>
-          <div class="jewel" style:--jewel={3} />
+          <div class="jewel" style:--jewel={3} draggable="true" />
         </td>
       {/each}
     </tr>
