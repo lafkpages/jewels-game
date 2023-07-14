@@ -79,10 +79,10 @@
     board[rowTo][cellTo] = jewelFrom;
 
     // Find matches, move down jewels, plus reactivity
-    doStuff();
+    matchJewels();
   }
 
-  function doStuff() {
+  function matchJewels() {
     setTimeout(() => {
       let matches;
       ({ board, matches } = checkForMatches(board));
@@ -99,7 +99,7 @@
         setTimeout(() => {
           board = refillBoard(board);
 
-          doStuff();
+          matchJewels();
         }, 200);
       }, 200);
     }, 200);
