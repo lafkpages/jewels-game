@@ -1,10 +1,10 @@
 <script lang="ts">
   import type { Board } from "$lib";
 
-  const board: Board = [
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9],
+  let board: Board = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
   ];
 
   let boardElm: HTMLTableElement;
@@ -54,13 +54,15 @@
     const rowFrom = parseInt(e.dataTransfer.getData("text/plain;p=row"));
     const cellFrom = parseInt(e.dataTransfer.getData("text/plain;p=cell"));
 
-    if (isNaN(rowFrom) || isNaN(cellFrom)) {
-      return;
-    }
-
     const [rowTo, cellTo] = getJewelPos(e.target);
 
-    console.log(rowFrom, cellFrom, rowTo, cellTo);
+    // Swap jewels
+    const jewelFrom = board[rowFrom][cellFrom];
+    board[rowFrom][cellFrom] = board[rowTo][cellTo];
+    board[rowTo][cellTo] = jewelFrom;
+
+    // Reactivity
+    board = board;
   }
 </script>
 
@@ -73,7 +75,7 @@
         <td>
           <div
             class="jewel"
-            style:--jewel={rowIndex * 3 + cellIndex}
+            style:--jewel={cell}
             draggable="true"
             on:dragstart={onJewelDragStart}
             on:dragover={onJewelDragOver}
