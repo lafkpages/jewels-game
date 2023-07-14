@@ -1,4 +1,4 @@
-import type { Board } from '$lib';
+import type { Board } from "$lib";
 
 export const jewelTypes = 11;
 
