@@ -7,4 +7,4 @@ export type Board<T = BoardCell> = T[][];
 export interface Match {
   length: number;
   jewelType: number;
-};
+}

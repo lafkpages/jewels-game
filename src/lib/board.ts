@@ -15,7 +15,9 @@ export function generateBoard(size: number): Board {
   return board;
 }
 
-export function generateBoardEnsureNoMatches(...args: Parameters<typeof generateBoard>) {
+export function generateBoardEnsureNoMatches(
+  ...args: Parameters<typeof generateBoard>
+) {
   let board = generateBoard(...args);
   let matches = checkForMatches(board).matches;
   while (matches.length) {
@@ -58,7 +60,7 @@ export function checkForMatches(board: Board) {
           // Keep track of the matches found
           matches.push({
             length: matchLength,
-            jewelType
+            jewelType,
           });
         }
 
@@ -92,7 +94,7 @@ export function checkForMatches(board: Board) {
           // Keep track of the matches found
           matches.push({
             length: matchLength,
-            jewelType
+            jewelType,
           });
         }
 
@@ -102,7 +104,8 @@ export function checkForMatches(board: Board) {
   }
 
   return {
-    matches, board
+    matches,
+    board,
   };
 }
 
