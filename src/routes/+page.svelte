@@ -4,10 +4,13 @@
     checkForMatches,
     collapseBoard,
     refillBoard,
+    sum,
   } from "$lib";
 
   const boardSize = 10;
   let board = generateBoard(boardSize);
+
+  let score = 0;
 
   function getJewelPos(jewel: HTMLElement) {
     return [
@@ -80,6 +83,8 @@
       let matches;
       ({ board, matches } = checkForMatches(board));
 
+      score += sum(matches);
+
       setTimeout(() => {
         board = collapseBoard(board);
 
@@ -92,6 +97,8 @@
 </script>
 
 <h1>Jewels Game</h1>
+
+<p>Score: {score}</p>
 
 <table>
   {#each board as row, rowIndex}
