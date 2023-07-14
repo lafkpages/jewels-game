@@ -146,30 +146,4 @@
   td {
     border-spacing: 0px;
   }
-
-  .jewel {
-    --size: 32px;
-    --scale: calc(var(--size) / 16);
-    --jewel: 0;
-
-    background: url("/jewels.png");
-    background-position: calc(var(--scale) * -192)
-      calc(var(--jewel) * (var(--size) * -1));
-    background-size: calc(var(--scale) * 256);
-    image-rendering: pixelated;
-    width: var(--size);
-    height: var(--size);
-    cursor: grab;
-    transition: ease-in-out 0.2s;
-    transition-property: transform;
-  }
-
-  .jewel:focus-visible,
-  .jewel:hover {
-    transform: scale(1.1);
-  }
-
-  .jewel:active {
-    cursor: grabbing;
-  }
 </style>
