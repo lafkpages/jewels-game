@@ -3,3 +3,8 @@ pnpm-lock.yaml
 
 # SvelteKit
 .svelte-kit
+
+# Replit stuff
+.config
+.cache
+.upm
