@@ -10,9 +10,12 @@
   image-rendering: pixelated;
   width: var(--size);
   height: var(--size);
-  cursor: grab;
   transition: ease-in-out 0.2s;
   transition-property: transform;
+}
+
+.jewel[draggable="true"] {
+  cursor: grab;
 }
 
 .jewel:focus-visible,
@@ -20,6 +23,6 @@
   transform: scale(1.1);
 }
 
-.jewel:active {
+.jewel[draggable="true"]:active {
   cursor: grabbing;
 }
