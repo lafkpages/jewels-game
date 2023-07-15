@@ -8,7 +8,7 @@
     "preview": "vite preview",
     "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-    "format": "prettier --write ."
+    "format": "prettier --write --plugin=prettier-plugin-svelte ."
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "^2.0.0",
