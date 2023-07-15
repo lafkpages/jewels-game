@@ -1,5 +1,5 @@
 .jewel {
-  --size: 32px;
+  --size: 40px;
   --scale: calc(var(--size) / 16);
   --jewel: 0;
   --shape: 12;
