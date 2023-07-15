@@ -33,7 +33,7 @@ language = "nodejs-pnpm"
 
   [packager.features]
   packageSearch = true
-  guessImports = true
+  guessImports = false
   enabledForHosting = false
 
 [unitTest]
