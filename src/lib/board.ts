@@ -29,7 +29,7 @@ export function generateBoard(size: number, contrast = true): Board {
 
 export function generateBoardEnsureNoMatches(
   boardOptions: Parameters<typeof generateBoard>,
-  limit = 1000,
+  limit = 1000
 ) {
   let board = generateBoard(...boardOptions);
   let matches = checkForMatches(board).matches;

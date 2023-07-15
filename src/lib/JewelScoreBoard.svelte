@@ -14,7 +14,11 @@
       {#if jewelTypeIsContrast(jewelType)}
         <tr>
           <td>
-            <div class="jewel" style:--jewel={jewelType} style:--shape={jewelType} />
+            <div
+              class="jewel"
+              style:--jewel={jewelType}
+              style:--shape={jewelType}
+            />
           </td>
           <td>{jewelType + 1}</td>
         </tr>
