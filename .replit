@@ -9,7 +9,8 @@ hidden = [
   ".npmrc",
   ".vscode",
   ".prettier*",
-  ".svelte-kit"
+  ".svelte-kit",
+  "build"
 ]
 
 [nix]
