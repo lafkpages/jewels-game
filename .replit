@@ -2,7 +2,8 @@ entrypoint = "index.js"
 
 hidden = [
   ".config",
-  "pnpm-lock.yaml"
+  "pnpm-lock.yaml",
+  ".vscode"
 ]
 
 [interpreter]
