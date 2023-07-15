@@ -11,12 +11,14 @@
   </thead>
   <tbody>
     {#each { length: jewelTypes } as _, jewelType}
-      <tr>
-        <td>
-          <div class="jewel" style:--jewel={jewelType} />
-        </td>
-        <td>{jewelType + 1}</td>
-      </tr>
+      {#if jewelType % 2 == 0}
+        <tr>
+          <td>
+            <div class="jewel" style:--jewel={jewelType} />
+          </td>
+          <td>{jewelType + 1}</td>
+        </tr>
+      {/if}
     {/each}
   </tbody>
 </table>
