@@ -7,10 +7,14 @@
     sum,
   } from "$lib";
 
+  import type { Board } from "$lib";
+
+  import { onMount } from "svelte";
+
   import JewelScoreBoard from "$lib/JewelScoreBoard.svelte";
 
   const boardSize = 10;
-  let board = generateBoardEnsureNoMatches([boardSize]);
+  let board: Board = [];
 
   let score = 0;
 
@@ -106,6 +110,10 @@
       }, 200);
     }, 200);
   }
+
+  onMount(() => {
+    board = generateBoardEnsureNoMatches([boardSize]);
+  });
 </script>
 
 <h1>Jewels Game</h1>
