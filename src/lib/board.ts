@@ -27,13 +27,16 @@ export function generateBoard(size: number, contrast = true): Board {
 }
 
 export function generateBoardEnsureNoMatches(
-  ...args: Parameters<typeof generateBoard>
+  boardOptions: Parameters<typeof generateBoard>,
+  limit = 1000,
 ) {
-  let board = generateBoard(...args);
+  let board = generateBoard(...boardOptions);
   let matches = checkForMatches(board).matches;
-  while (matches.length) {
-    board = generateBoard(...args);
+  let count = 0;
+  while (matches.length && count <= limit) {
+    board = generateBoard(...boardOptions);
     matches = checkForMatches(board).matches;
+    count++;
   }
   return board;
 }

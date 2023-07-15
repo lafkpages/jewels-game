@@ -10,7 +10,7 @@
   import JewelScoreBoard from "$lib/JewelScoreBoard.svelte";
 
   const boardSize = 10;
-  let board = generateBoardEnsureNoMatches(boardSize);
+  let board = generateBoardEnsureNoMatches([boardSize]);
 
   let score = 0;
 
