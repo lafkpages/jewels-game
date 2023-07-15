@@ -118,6 +118,7 @@
             <div
               class="jewel"
               style:--jewel={cell}
+              style:--shape={cell}
               draggable="true"
               on:dragstart={onJewelDragStart}
               on:dragover={onJewelDragOver}

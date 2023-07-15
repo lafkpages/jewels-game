@@ -1,6 +1,7 @@
 import type { Board, Match } from "$lib";
 
 export const jewelTypes = 11;
+export const jewelShapes = 16;
 
 export const emptyCell = null;
 
