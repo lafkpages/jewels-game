@@ -33,10 +33,14 @@ export function generateBoardEnsureNoMatches(
   let board = generateBoard(...boardOptions);
   let matches = checkForMatches(board).matches;
   let count = 0;
-  while (matches.length && count <= limit) {
+  while (matches.length) {
     board = generateBoard(...boardOptions);
     matches = checkForMatches(board).matches;
     count++;
+
+    if (count > limit) {
+      throw new Error("generateBoardEnsureNoMatches: too many attempts");
+    }
   }
   return board;
 }
