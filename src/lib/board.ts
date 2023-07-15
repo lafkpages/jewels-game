@@ -13,14 +13,12 @@ export function generateBoard(size: number, contrast = true): Board {
   for (let i = 0; i < size; i++) {
     board.push([]);
     for (let j = 0; j < size; j++) {
-      let jewelType = -1;
+      let jewelType = Math.floor(Math.random() * jewelTypes);
       if (contrast) {
         // Ensure that the jewel type is even
         while (!jewelTypeIsContrast(jewelType)) {
           jewelType = Math.floor(Math.random() * jewelTypes);
         }
-      } else {
-        jewelType = Math.floor(Math.random() * jewelTypes);
       }
 
       board[i].push(jewelType);
