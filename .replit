@@ -1,4 +1,7 @@
-entrypoint = "index.js"
+compile = "./.config/npm/node_global/bin/pnpm build"
+run = "node build"
+
+entrypoint = "src/routes/+page.svelte"
 
 hidden = [
   ".config",
@@ -7,15 +10,6 @@ hidden = [
   ".vscode",
   ".prettier*",
   ".svelte-kit"
-]
-
-[interpreter]
-command = [
-    "prybar-nodejs",
-    "-q",
-    "--ps1",
-    "\u0001\u001b[33m\u0002\u0001\u001b[00m\u0002 ",
-    "-i"
 ]
 
 [[hints]]
@@ -27,14 +21,14 @@ channel = "stable-22_11"
 
 [env]
 XDG_CONFIG_HOME = "$REPL_HOME/.config"
-PATH = "$REPL_HOME/.config/npm/node_global/bin:$REPL_HOME/node_modules/.bin"
 npm_config_prefix = "$REPL_HOME/.config/npm/node_global"
+PATH = "$npm_config_prefix/bin:$REPL_HOME/node_modules/.bin"
 
 [gitHubImport]
 requiredFiles = [".replit", "replit.nix", ".config", "package.json", "package-lock.json"]
 
 [packager]
-language = "nodejs"
+language = "nodejs-pnpm"
 
   [packager.features]
   packageSearch = true
