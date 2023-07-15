@@ -1,6 +1,9 @@
 entrypoint = "index.js"
 
-hidden = [".config", "package-lock.json"]
+hidden = [
+  ".config",
+  "package-lock.json"
+]
 
 [interpreter]
 command = [
