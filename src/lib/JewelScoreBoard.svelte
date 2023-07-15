@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { jewelTypes } from "$lib";
+  import { jewelTypes, jewelTypeIsContrast } from "$lib";
 </script>
 
 <table>
@@ -11,7 +11,7 @@
   </thead>
   <tbody>
     {#each { length: jewelTypes } as _, jewelType}
-      {#if jewelType % 2 == 0}
+      {#if jewelTypeIsContrast(jewelType)}
         <tr>
           <td>
             <div class="jewel" style:--jewel={jewelType} />
