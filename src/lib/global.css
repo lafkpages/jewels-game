@@ -8,6 +8,7 @@
   background-position: calc(var(--scale) * (var(--shape) * -16))
     calc(var(--jewel) * (var(--size) * -1));
   background-size: calc(var(--scale) * 256);
+  image-rendering: crisp-edges;
   image-rendering: pixelated;
   width: var(--size);
   height: var(--size);
