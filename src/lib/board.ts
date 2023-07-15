@@ -15,7 +15,6 @@ export function generateBoard(size: number, contrast = true): Board {
     for (let j = 0; j < size; j++) {
       let jewelType = Math.floor(Math.random() * jewelTypes);
       if (contrast) {
-        // Ensure that the jewel type is even
         while (!jewelTypeIsContrast(jewelType)) {
           jewelType = Math.floor(Math.random() * jewelTypes);
         }
@@ -146,7 +145,6 @@ export function refillBoard(board: Board, contrast = true) {
     for (let i = 0; i < board.length && board[i][j] === emptyCell; i++) {
       let jewelType = Math.floor(Math.random() * jewelTypes);
       if (contrast) {
-        // Ensure that the jewel type is even
         while (!jewelTypeIsContrast(jewelType)) {
           jewelType = Math.floor(Math.random() * jewelTypes);
         }
