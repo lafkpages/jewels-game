@@ -4,12 +4,22 @@ export const jewelTypes = 11;
 
 export const emptyCell = null;
 
-export function generateBoard(size: number): Board {
+export function generateBoard(size: number, contrast = true): Board {
   const board: Board = [];
   for (let i = 0; i < size; i++) {
     board.push([]);
     for (let j = 0; j < size; j++) {
-      board[i].push(Math.floor(Math.random() * jewelTypes));
+      let jewelType = -1;
+      if (contrast) {
+        // Ensure that the jewel type is even
+        while (jewelType % 2 !== 0) {
+          jewelType = Math.floor(Math.random() * jewelTypes);
+        }
+      } else {
+        jewelType = Math.floor(Math.random() * jewelTypes);
+      }
+
+      board[i].push(jewelType);
     }
   }
   return board;
