@@ -1,20 +1,13 @@
 <script lang="ts">
-  import {
-    generateBoardEnsureNoMatches,
-    checkForMatches,
-    collapseBoard,
-    refillBoard,
-    sum,
-  } from "$lib";
-
-  import type { Board } from "$lib";
-
-  import { onMount } from "svelte";
+  import { checkForMatches, collapseBoard, refillBoard, sum } from "$lib";
 
   import JewelScoreBoard from "$lib/JewelScoreBoard.svelte";
 
-  const boardSize = 10;
-  let board: Board = [];
+  import type { PageData } from "./$types";
+
+  export let data: PageData;
+
+  let board = data.board;
 
   let score = 0;
 
@@ -110,10 +103,6 @@
       }, 200);
     }, 200);
   }
-
-  onMount(() => {
-    board = generateBoardEnsureNoMatches([boardSize]);
-  });
 </script>
 
 <h1>Jewels Game</h1>
