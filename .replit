@@ -2,7 +2,7 @@ entrypoint = "index.js"
 
 hidden = [
   ".config",
-  "package-lock.json"
+  "pnpm-lock.yaml"
 ]
 
 [interpreter]
