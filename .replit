@@ -21,7 +21,7 @@ channel = "stable-22_11"
 
 [env]
 XDG_CONFIG_HOME = "$REPL_HOME/.config"
-npm_config_prefix = "$REPL_HOME/.config/npm/node_global"
+npm_config_prefix = "$XDG_CONFIG_HOME/npm/node_global"
 PATH = "$npm_config_prefix/bin:$REPL_HOME/node_modules/.bin"
 PNPM_HOME = "$XDG_CONFIG_HOME/pnpm"
 
