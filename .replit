@@ -1,5 +1,4 @@
-compile = "./.config/npm/node_global/bin/pnpm build"
-run = "node build"
+run = "pnpm dev:host"
 
 entrypoint = "src/routes/+page.svelte"
 
