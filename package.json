@@ -1,5 +1,6 @@
 {
   "name": "jewels-game",
+  "description": "A Bejeweled-like game made in SvelteKit.",
   "version": "0.0.1",
   "private": true,
   "scripts": {
