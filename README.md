@@ -1,5 +1,7 @@
 # Jewels Game
 
+A Bejeweled-like game made in SvelteKit.
+
 TODO: find a good name. This is a placeholder.
 
 ## Assets
