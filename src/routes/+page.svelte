@@ -29,6 +29,15 @@
   </section>
 
   <section>
+    <h2>Instructions</h2>
+    <p>
+      Drag and drop a jewel to swap it with another, and match three or more
+      jewels in a line to destroy them! The more you destroy, the more points
+      you get.
+    </p>
+  </section>
+
+  <section>
     <h2>Scores per jewel</h2>
 
     <JewelScoreBoard />
