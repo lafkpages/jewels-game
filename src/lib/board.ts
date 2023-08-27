@@ -5,6 +5,12 @@ export const jewelShapes = 16;
 
 export const emptyCell = null;
 
+export class BoardGenerationTooManyAttempts extends Error {
+  constructor(message = "generateBoardEnsureNoMatches: too many attempts") {
+    super(message);
+  }
+}
+
 export function jewelTypeIsContrast(jewelType: number) {
   return jewelType % 2 === 0;
 }
@@ -40,7 +46,7 @@ export function generateBoardEnsureNoMatches(
     count++;
 
     if (count > limit) {
-      throw new Error("generateBoardEnsureNoMatches: too many attempts");
+      throw new BoardGenerationTooManyAttempts();
     }
   }
   return {
