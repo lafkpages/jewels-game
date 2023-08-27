@@ -48,6 +48,8 @@
   main {
     width: 100%;
     height: 100%;
+    padding: 32px;
+    box-sizing: border-box;
     overflow-y: scroll;
     scroll-behavior: smooth;
     scroll-snap-type: y mandatory;
@@ -57,8 +59,6 @@
     width: 100%;
     max-width: 1000px;
     margin: auto;
-    padding: 32px;
-    box-sizing: border-box;
     height: 100vh;
     height: 100dvh;
     display: flex;
