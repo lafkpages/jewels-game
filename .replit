@@ -20,6 +20,7 @@ XDG_CONFIG_HOME = "$REPL_HOME/.config"
 npm_config_prefix = "$XDG_CONFIG_HOME/npm/node_global"
 PATH = "$npm_config_prefix/bin:$REPL_HOME/node_modules/.bin"
 PNPM_HOME = "$XDG_CONFIG_HOME/pnpm"
+ADAPTER = "node"
 
 [gitHubImport]
 requiredFiles = [".replit", "replit.nix", ".config", "package.json", "package-lock.json"]
