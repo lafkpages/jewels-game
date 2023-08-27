@@ -1,13 +1,30 @@
 import { dev } from "$app/environment";
 
-import { generateBoardEnsureNoMatches } from "$lib";
+import { error } from "@sveltejs/kit";
+
+import {
+  generateBoardEnsureNoMatches,
+  BoardGenerationTooManyAttempts,
+} from "$lib";
+
+import type { Board } from "$lib";
 
 import type { PageServerLoad } from "./$types";
 
 const boardSize = 15;
 
 export const load: PageServerLoad = ({ setHeaders }) => {
-  const { board, count } = generateBoardEnsureNoMatches([boardSize], 50000);
+  let board: Board;
+  let count: number;
+  try {
+    ({ board, count } = generateBoardEnsureNoMatches([boardSize], 50000));
+  } catch (e) {
+    if (e instanceof BoardGenerationTooManyAttempts) {
+      throw error(500, "Board generation took to many iterations. Try again.");
+    } else {
+      throw e;
+    }
+  }
 
   if (dev) {
     setHeaders({
