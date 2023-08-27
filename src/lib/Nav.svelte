@@ -8,6 +8,7 @@
 
   export let sections: string[];
   export let gap = 16;
+  export let blur = false;
 
   export let scrollElm = browser ? document.documentElement : null;
 
@@ -73,7 +74,7 @@
   }
 </script>
 
-<nav>
+<nav class:blur>
   <span
     class="active"
     style:--pos="{activeSectionHeight}px"
@@ -93,6 +94,10 @@
     position: fixed;
     top: 32px;
     left: 32px;
+  }
+
+  nav.blur {
+    backdrop-filter: blur(8px);
   }
 
   nav ul {
