@@ -105,40 +105,50 @@
   }
 </script>
 
-<h1>Jewels Game</h1>
+<main>
+  <h1>Jewels Game</h1>
 
-<p>Score: {score}</p>
+  <p>Score: {score}</p>
 
-<table>
-  {#each board as row, rowIndex}
-    <tr>
-      {#each row as cell, cellIndex}
-        <td>
-          {#if typeof cell == "number"}
-            <div
-              class="jewel"
-              style:--jewel={cell}
-              style:--shape={cell}
-              draggable="true"
-              on:dragstart={onJewelDragStart}
-              on:dragover={onJewelDragOver}
-              on:drop={onJewelDrop}
-              role="region"
-              data-row={rowIndex}
-              data-cell={cellIndex}
-            />
-          {/if}
-        </td>
-      {/each}
-    </tr>
-  {/each}
-</table>
+  <table>
+    {#each board as row, rowIndex}
+      <tr>
+        {#each row as cell, cellIndex}
+          <td>
+            {#if typeof cell == "number"}
+              <div
+                class="jewel"
+                style:--jewel={cell}
+                style:--shape={cell}
+                draggable="true"
+                on:dragstart={onJewelDragStart}
+                on:dragover={onJewelDragOver}
+                on:drop={onJewelDrop}
+                role="region"
+                data-row={rowIndex}
+                data-cell={cellIndex}
+              />
+            {/if}
+          </td>
+        {/each}
+      </tr>
+    {/each}
+  </table>
 
-<h2>Scores per jewel</h2>
+  <h2>Scores per jewel</h2>
 
-<JewelScoreBoard />
+  <JewelScoreBoard />
+</main>
 
 <style>
+  main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
   table,
   tr,
   td {
