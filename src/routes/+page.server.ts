@@ -17,5 +17,6 @@ export const load: PageServerLoad = ({ setHeaders }) => {
 
   return {
     board,
+    boardGenerationCount: dev ? count : undefined,
   };
 };
