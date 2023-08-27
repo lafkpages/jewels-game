@@ -39,7 +39,7 @@
 
     <p>Score: {score}</p>
 
-    <Game bind:board />
+    <Game bind:board bind:score />
   </section>
 
   <section id="instructions">
