@@ -16,6 +16,7 @@ a {
   color: #2664a2;
   text-decoration: none;
   transition: 200ms ease-out color;
+  text-decoration: 1px dashed underline #2664a2;
 }
 
 a:hover,
