@@ -7,6 +7,8 @@
 <main>
   <h1>{$page.status}: {$page.error?.message}</h1>
 
+  <p><a href="/">Go home?</a></p>
+
   <Game size={5} />
 </main>
 
