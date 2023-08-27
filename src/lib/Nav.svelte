@@ -64,7 +64,6 @@
     position: fixed;
     top: 32px;
     left: 32px;
-    bottom: 32px;
   }
 
   nav ul {
