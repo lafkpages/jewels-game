@@ -37,13 +37,11 @@
 
 <style>
   main {
-    --size: 2;
-
     width: 100%;
-    height: calc(100vh * var(--size));
-    height: calc(100dvh * var(--size));
-    display: flex;
-    flex-direction: column;
+    height: 100%;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
   }
 
   section {
@@ -54,5 +52,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    scroll-snap-align: start;
   }
 </style>
