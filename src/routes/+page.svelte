@@ -1,6 +1,4 @@
 <script lang="ts">
-  import { page } from "$app/stores";
-
   import Game from "$lib/Game.svelte";
   import JewelScoreBoard from "$lib/JewelScoreBoard.svelte";
   import Nav from "$lib/Nav.svelte";
