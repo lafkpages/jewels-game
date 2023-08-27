@@ -20,23 +20,39 @@
 </script>
 
 <main>
-  <h1>Jewels Game</h1>
+  <section>
+    <h1>Jewels Game</h1>
 
-  <p>Score: {score}</p>
+    <p>Score: {score}</p>
 
-  <Game bind:board />
+    <Game bind:board />
+  </section>
 
-  <h2>Scores per jewel</h2>
+  <section>
+    <h2>Scores per jewel</h2>
 
-  <JewelScoreBoard />
+    <JewelScoreBoard />
+  </section>
 </main>
 
 <style>
   main {
+    --size: 2;
+
     width: 100%;
-    height: 100%;
+    height: calc(100vh * var(--size));
+    height: calc(100dvh * var(--size));
+    display: flex;
+    flex-direction: column;
+  }
+
+  section {
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
   }
 </style>
