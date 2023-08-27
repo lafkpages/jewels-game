@@ -55,6 +55,8 @@
 
   section {
     width: 100%;
+    max-width: 1000px;
+    margin: auto;
     height: 100vh;
     height: 100dvh;
     display: flex;
