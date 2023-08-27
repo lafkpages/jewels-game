@@ -1,5 +1,7 @@
 <script lang="ts">
   import { jewelTypes, jewelTypeIsContrast } from "$lib";
+
+  import Jewel from "$lib/Jewel.svelte";
 </script>
 
 <table>
@@ -14,11 +16,7 @@
       {#if jewelTypeIsContrast(jewelType)}
         <tr>
           <td>
-            <div
-              class="jewel"
-              style:--jewel={jewelType}
-              style:--shape={jewelType}
-            />
+            <Jewel type={jewelType} />
           </td>
           <td>{jewelType + 1}</td>
         </tr>

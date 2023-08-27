@@ -1,6 +1,7 @@
 <script lang="ts">
   import { checkForMatches, collapseBoard, refillBoard, sum } from "$lib";
 
+  import Jewel from "$lib/Jewel.svelte";
   import JewelScoreBoard from "$lib/JewelScoreBoard.svelte";
 
   import type { PageData } from "./$types";
@@ -116,17 +117,13 @@
         {#each row as cell, cellIndex}
           <td>
             {#if typeof cell == "number"}
-              <div
-                class="jewel"
-                style:--jewel={cell}
-                style:--shape={cell}
-                draggable="true"
+              <Jewel
+                type={cell}
+                row={rowIndex}
+                cell={cellIndex}
                 on:dragstart={onJewelDragStart}
                 on:dragover={onJewelDragOver}
                 on:drop={onJewelDrop}
-                role="region"
-                data-row={rowIndex}
-                data-cell={cellIndex}
               />
             {/if}
           </td>
