@@ -12,6 +12,17 @@ body {
   margin: 0px;
 }
 
+a {
+  color: #2664a2;
+  text-decoration: none;
+  transition: 200ms ease-out color;
+}
+
+a:hover,
+a:focus-visible {
+  color: #00a9ff;
+}
+
 .jewel {
   --size: 40px;
   --scale: calc(var(--size) / 16);
