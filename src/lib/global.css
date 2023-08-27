@@ -29,8 +29,8 @@ body {
   cursor: grab;
 }
 
-.jewel:focus-visible,
-.jewel:hover {
+.jewel.interactive:focus-visible,
+.jewel.interactive:hover {
   transform: scale(1.1);
 }
 

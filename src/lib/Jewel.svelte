@@ -10,6 +10,7 @@
 
 <div
   class="jewel"
+  class:interactive
   style:--jewel={type}
   style:--shape={shape}
   draggable={interactive}
