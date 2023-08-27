@@ -57,6 +57,8 @@
     width: 100%;
     max-width: 1000px;
     margin: auto;
+    padding: 32px;
+    box-sizing: border-box;
     height: 100vh;
     height: 100dvh;
     display: flex;
