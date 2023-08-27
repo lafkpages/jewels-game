@@ -21,7 +21,6 @@
     );
   $: {
     if (activeElm) {
-      console.debug(activeSectionHeightOld, activeSectionHeight);
       activeElm.animate(
         [
           {
