@@ -1,9 +1,13 @@
 <script lang="ts">
   import { page } from "$app/stores";
+
+  import Game from "$lib/Game.svelte";
 </script>
 
 <main>
   <h1>{$page.status}: {$page.error?.message}</h1>
+
+  <Game size={5} />
 </main>
 
 <style>

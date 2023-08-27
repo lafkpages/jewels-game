@@ -1,10 +1,18 @@
 <script lang="ts">
   import Jewel from "$lib/Jewel.svelte";
 
-  import { checkForMatches, collapseBoard, refillBoard, sum } from "$lib";
+  import {
+    checkForMatches,
+    collapseBoard,
+    generateBoard,
+    refillBoard,
+    sum,
+  } from "$lib";
   import type { Board } from "$lib";
 
-  export let board: Board;
+  export let size: number = 0;
+  export let board: Board = generateBoard(size);
+
   export let score = 0;
 
   function getJewelPos(jewel: HTMLElement) {
