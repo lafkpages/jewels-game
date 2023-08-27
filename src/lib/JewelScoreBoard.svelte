@@ -16,7 +16,7 @@
       {#if jewelTypeIsContrast(jewelType)}
         <tr>
           <td>
-            <Jewel type={jewelType} />
+            <Jewel type={jewelType} interactive={false} />
           </td>
           <td>{jewelType + 1}</td>
         </tr>
