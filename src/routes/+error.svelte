@@ -22,4 +22,11 @@
     justify-content: center;
     text-align: center;
   }
+
+  h1 {
+    width: 100%;
+    overflow-x: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
 </style>
