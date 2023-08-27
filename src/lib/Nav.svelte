@@ -19,6 +19,7 @@
         (document.getElementById(`${sections[i]}-nav-link`)?.clientHeight || 0),
       0
     );
+
   $: {
     if (activeElm) {
       activeElm.animate(
