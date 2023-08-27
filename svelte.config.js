@@ -8,9 +8,10 @@ const config = {
   preprocess: vitePreprocess(),
 
   kit: {
-    adapter: process.env.REPLIT_ENVIRONMENT
-      ? adapterNode()
-      : adapterAuto(),
+    adapter:
+      process.env.ADAPTER == "node" || process.env.REPLIT_ENVIRONMENT
+        ? adapterNode()
+        : adapterAuto(),
   },
 };
 
