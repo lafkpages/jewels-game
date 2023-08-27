@@ -4,6 +4,7 @@
   import { kebabCaseToHuman } from "$lib";
 
   export let sections: string[];
+  export let gap = 16;
 
   let activeElm: HTMLSpanElement | null = null;
 
@@ -15,7 +16,7 @@
     .reduce(
       (acc, _, i) =>
         acc +
-        16 +
+        gap +
         (document.getElementById(`${sections[i]}-nav-link`)?.clientHeight || 0),
       0
     );
@@ -49,7 +50,7 @@
     style:--pos="{activeSectionHeight}px"
     bind:this={activeElm}>-</span
   >
-  <ul>
+  <ul style:--gap="{gap}px">
     {#each sections as section}
       <li id="{section}-nav-link">
         <a href="#{section}">{kebabCaseToHuman(section)}</a>
@@ -72,7 +73,7 @@
     margin: 0px;
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: var(--gap);
   }
 
   nav .active {
