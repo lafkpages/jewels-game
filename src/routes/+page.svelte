@@ -15,13 +15,18 @@
     );
   }
 
+  let mainElm: HTMLElement | null = null;
+
   let board = data.board;
 
   let score = 0;
 </script>
 
-<main>
-  <Nav sections={["game", "instructions", "scores-per-jewel"]} />
+<main bind:this={mainElm}>
+  <Nav
+    scrollElm={mainElm}
+    sections={["game", "instructions", "scores-per-jewel"]}
+  />
 
   <section id="game">
     <h1>Jewels Game</h1>
