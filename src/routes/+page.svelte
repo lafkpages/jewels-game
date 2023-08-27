@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { page } from "$app/stores";
+
   import Game from "$lib/Game.svelte";
   import JewelScoreBoard from "$lib/JewelScoreBoard.svelte";
 
@@ -19,17 +21,33 @@
   let board = data.board;
 
   let score = 0;
+
+  const navSections = ["game", "instructions", "scores-per-jewel"];
+  $: navActiveSection = navSections.indexOf($page.url.hash.slice(1));
+  $: navActiveSectionHeight = new Array(navActiveSection)
+    .fill(0)
+    .reduce(
+      (acc, _, i) =>
+        acc +
+        16 +
+        (document.getElementById(`${navSections[i]}-nav-link`)?.clientHeight ||
+          0),
+      0
+    );
 </script>
 
 <main>
   <nav>
-    <ul>
-      {#each ["game", "instructions", "scores-per-jewel"] as section}
-        <li>
-          <a href="#{section}">{kebabCaseToHuman(section)}</a>
-        </li>
-      {/each}
-    </ul>
+    {#key $page.url.hash}
+      <span class="active" style:--pos="{navActiveSectionHeight}px">-</span>
+      <ul>
+        {#each navSections as section}
+          <li id="{section}-nav-link">
+            <a href="#{section}">{kebabCaseToHuman(section)}</a>
+          </li>
+        {/each}
+      </ul>
+    {/key}
   </nav>
 
   <section id="game">
@@ -69,18 +87,24 @@
 
   nav {
     position: fixed;
-    top: 0px;
-    left: 0px;
-    bottom: 0px;
+    top: 32px;
+    left: 32px;
+    bottom: 32px;
   }
 
   nav ul {
     list-style-type: none;
-    padding: 32px;
+    padding: 0px;
     margin: 0px;
     display: flex;
     flex-direction: column;
     gap: 16px;
+  }
+
+  nav .active {
+    position: absolute;
+    top: var(--pos);
+    left: -24px;
   }
 
   section {
