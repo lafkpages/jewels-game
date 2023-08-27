@@ -52,6 +52,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
     scroll-snap-align: start;
   }
 </style>
