@@ -2,6 +2,8 @@
   import Game from "$lib/Game.svelte";
   import JewelScoreBoard from "$lib/JewelScoreBoard.svelte";
 
+  import { kebabCaseToHuman } from "$lib";
+
   import type { PageData } from "./$types";
 
   export let data: PageData;
@@ -22,15 +24,11 @@
 <main>
   <nav>
     <ul>
-      <li>
-        <a href="#game">Game</a>
-      </li>
-      <li>
-        <a href="#instructions">Instructions</a>
-      </li>
-      <li>
-        <a href="#scores-per-jewel">Scores per jewel</a>
-      </li>
+      {#each ["game", "instructions", "scores-per-jewel"] as section}
+        <li>
+          <a href="#{section}">{kebabCaseToHuman(section)}</a>
+        </li>
+      {/each}
     </ul>
   </nav>
 
