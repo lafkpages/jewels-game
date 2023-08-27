@@ -43,7 +43,10 @@ export function generateBoardEnsureNoMatches(
       throw new Error("generateBoardEnsureNoMatches: too many attempts");
     }
   }
-  return board;
+  return {
+    board,
+    count,
+  };
 }
 
 export function checkForMatches(board: Board) {
