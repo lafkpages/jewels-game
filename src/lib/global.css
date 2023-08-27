@@ -1,3 +1,12 @@
+@font-face {
+  font-family: super-legend-boy;
+  src: url("/fonts/super-legend-boy/SuperLegendBoy-4w8Y.ttf") format("truetype");
+}
+
+body {
+  font-family: super-legend-boy;
+}
+
 .jewel {
   --size: 40px;
   --scale: calc(var(--size) / 16);
