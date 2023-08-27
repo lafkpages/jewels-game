@@ -8,6 +8,14 @@
 
   export let data: PageData;
 
+  if (data.boardGenerationCount) {
+    console.debug(
+      "generateBoardEnsureNoMatches took",
+      data.boardGenerationCount,
+      "tries"
+    );
+  }
+
   let board = data.board;
 
   let score = 0;
