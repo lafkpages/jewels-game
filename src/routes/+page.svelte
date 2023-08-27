@@ -20,7 +20,21 @@
 </script>
 
 <main>
-  <section>
+  <nav>
+    <ul>
+      <li>
+        <a href="#game">Game</a>
+      </li>
+      <li>
+        <a href="#instructions">Instructions</a>
+      </li>
+      <li>
+        <a href="#scores-per-jewel">Scores per jewel</a>
+      </li>
+    </ul>
+  </nav>
+
+  <section id="game">
     <h1>Jewels Game</h1>
 
     <p>Score: {score}</p>
@@ -28,7 +42,7 @@
     <Game bind:board />
   </section>
 
-  <section>
+  <section id="instructions">
     <h2>Instructions</h2>
     <p>
       Drag and drop a jewel to swap it with another, and match three or more
@@ -37,7 +51,7 @@
     </p>
   </section>
 
-  <section>
+  <section id="scores-per-jewel">
     <h2>Scores per jewel</h2>
 
     <JewelScoreBoard />
@@ -53,6 +67,22 @@
     overflow-y: scroll;
     scroll-behavior: smooth;
     scroll-snap-type: y mandatory;
+  }
+
+  nav {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+  }
+
+  nav ul {
+    list-style-type: none;
+    padding: 32px;
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
   }
 
   section {
