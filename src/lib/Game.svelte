@@ -117,6 +117,7 @@
           {#if typeof cell == "number"}
             <Jewel
               type={cell}
+              shape={cell}
               row={rowIndex}
               cell={cellIndex}
               on:dragstart={onJewelDragStart}
