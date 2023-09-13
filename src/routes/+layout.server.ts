@@ -12,6 +12,8 @@ export const load = (async ({
   const urlMatch = url.origin.match(/^https?:\/\/([a-z0-9-]+)\.[a-z0-9-]+\.repl.co$/i);
 
   if (urlMatch && cookies.get('__jewels_dev') != 'yas') {
-    throw redirect(307, `https://${urlMatch[1]}.replit.app`);
+    const deploymentUrl = `https://${urlMatch[1]}.replit.app`;
+    console.debug(url.origin, '->', deploymentUrl);
+    throw redirect(307, deploymentUrl);
   }
 }) satisfies LayoutServerLoad;
